@@ -27,8 +27,9 @@ EXPOSE 8888
 
 ## Jupyter lab extension
 RUN apt install -y npm
-RUN pip install nodejs
-RUN jupyter labextension install jupyterlab_vim
+RUN jupyter labextension install jupyterlab_vim \
+	@jupyterlab/toc \
+	@telamonian/theme-darcula
 
 # kaggle
 COPY ./kaggle.json /root/.kaggle/
